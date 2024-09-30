@@ -1,0 +1,48 @@
+#
+# Copyright Super iPaaS Integration LLC, an IBM Company 2024
+#
+kind: test
+metadata:
+  name: Sanity
+  version: alpha
+  tags:
+    - functional
+  namespace: thor
+spec:
+  api:
+    $ref: thor:Payments:alpha
+  environment:
+   $ref: thor:dasoenv:alpha
+  request:
+    - method: GET
+      resource: /pet/11
+      headers:
+        - key: Content-Type
+          value: ${content-type}
+        - key: Accept
+          value: ${accept}
+      auth:
+        noauth: true
+      settings:
+        sslVerification: false
+        encodeURL: true
+      assertions:
+         $ref: daso:basicassert:alpha
+    - method: GET
+      resource: /pet/{petid}
+      headers:
+        - key: Content-Type
+          value: ${content-type}
+        - key: Accept
+          value: ${accept}
+      auth:
+        noauth: true
+      settings:
+        sslVerification: false
+        encodeURL: true
+      assertions:
+            expressions:
+              - name: "Validate the response code"
+                key: "code"
+                value: 200
+                action: "equals"

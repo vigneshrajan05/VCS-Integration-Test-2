@@ -1,0 +1,20 @@
+#
+# Copyright Super iPaaS Integration LLC, an IBM Company 2024
+#
+kind: api
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: Payments
+  namespace: thor
+  version: 1
+  tags:
+    - Razorpay
+    - Cred
+    - UPI
+  type: REST
+spec:
+  mocked: true
+  api-spec: 
+    $path: petstore.yaml
+  policy-seq: 
+    - $ref: thor:policyseq:1

@@ -1,0 +1,35 @@
+#
+# Copyright Super iPaaS Integration LLC, an IBM Company 2024
+#
+kind: TransformRequest
+apiVersion: api.webmethods.io/v1
+metadata:
+  name: request_processing_policy
+  version: alpha
+  namespace: thor
+  tags:
+    - iden
+spec:
+  condition: (${request.headers.test} equals test1) or (${request.headers.test} notEquals ${request.payload.jsonPath[$.customer.name]})
+  transformations:
+    set:
+        - key: ${request.headers.authorization}
+          value: ${request.authorization.authHeader}
+        - key: ${request.headers.h2}
+          value: test-header-value
+        - key: ${request.query.q2}
+          value: ${request.path.name}
+    setPayload:
+        content-types:
+          - application/xml: <test></test>
+        xsl:
+          - $path: format.xsl
+    remove:
+        - ${request.query.q1}
+        - ${request.path.mki}
+    namespaces:
+        - prefix: ps1
+          URI: http://test.com
+        - prefix: ps2
+          URI: http://test2.com
+    
