@@ -1,0 +1,25 @@
+#
+# Copyright Super iPaaS Integration LLC, an IBM Company 2024
+#
+kind: ValidateAPISpecification
+apiVersion: api.webmethods.io/beta
+metadata:
+  namespace: thor
+  name: validate_API_Specification_policy
+  version: alpha
+spec:
+  validate:
+    - query
+    - path
+    - cookie
+    - contentType
+    - headers:
+        condition: (${request.headers.test} equals test1) or (${request.headers.test})
+    - schema:
+        feature:
+          - name: TOLERATE_DUPLICATES
+            value: true
+          - name: DISALLOW_DOCTYPE
+            value: false
+          - name: NAMESPACE_GROWTH
+            value: true
