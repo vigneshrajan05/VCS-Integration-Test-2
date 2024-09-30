@@ -1,0 +1,7 @@
+projects:
+  PaymentsAPI:
+    description: This is a project created fron the API Samples repository
+    tags:
+      - UPI
+      - Finance
+    lastUpdated: 1727522144000
