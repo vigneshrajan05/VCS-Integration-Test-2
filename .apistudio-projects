@@ -1,1 +1,5 @@
-projects: {}
+projects:
+  My_New_Project:
+    description: ''
+    tags: []
+    lastUpdated: 1743578036797
