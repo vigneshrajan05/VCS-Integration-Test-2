@@ -9,3 +9,5 @@ metadata:
 spec:
   api-spec:
     $path: petApi-spec.yml
+  policy-sequence:
+    - $ref: MyPol:1.0
