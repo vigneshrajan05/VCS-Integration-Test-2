@@ -1,6 +1,7 @@
 projects:
-  vmmEdit:
+  vmmEdit2:
     description: This is an edited description
     tags:
       - api
-    lastUpdated: 1743763424979
+      - gw
+    lastUpdated: 1743774492548
