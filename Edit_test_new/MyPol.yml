@@ -1,0 +1,8 @@
+kind: PolicySequence
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: MyPol
+  namespace: dev
+  version: '1.0'
+  tags: []
+spec: {}
