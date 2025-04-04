@@ -1,7 +1,7 @@
 projects:
-  old_edit:
+  new:
     description: This is an edited description
     tags:
       - api
       - gw
-    lastUpdated: 1743777936788
+    lastUpdated: 1743779513366
