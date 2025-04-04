@@ -1,7 +1,7 @@
 projects:
-  newProj:
+  newProj2:
     description: This is an edited description
     tags:
       - api
       - gw
-    lastUpdated: 1743774790942
+    lastUpdated: 1743775165477
