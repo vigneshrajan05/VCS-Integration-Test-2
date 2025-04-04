@@ -1,0 +1,11 @@
+kind: api
+apiVersion: api.webmethods.io/beta
+metadata:
+  name: petApi
+  namespace: dev
+  version: '1.0'
+  tags: []
+  type: REST
+spec:
+  api-spec:
+    $path: petApi-spec.yml
