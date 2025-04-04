@@ -1,5 +1,6 @@
 projects:
-  My_New_Project:
-    description: ''
-    tags: []
-    lastUpdated: 1743578036797
+  PradeepaTest:
+    description: This is an edited description
+    tags:
+      - api
+    lastUpdated: 1743763278412
