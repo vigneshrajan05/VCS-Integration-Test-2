@@ -5,11 +5,6 @@ projects:
       - api
       - gw
     lastUpdated: 1743779658879
-  Edit_test_new:
-    description: new description
-    tags:
-      - edited
-    lastUpdated: 1743780290988
   modCheck_new3:
     description: ''
     tags: []
@@ -18,3 +13,9 @@ projects:
     description: ''
     tags: []
     lastUpdated: 1744277283112
+  Edit_test_new_3:
+    description: new description
+    tags:
+      - edited
+      - nexus
+    lastUpdated: 1746506700037
