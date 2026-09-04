@@ -23,3 +23,10 @@ projects:
       - nexus
     lastUpdated: 1746506700037
     id: eFOWKgB8
+  int-test-2-proj:
+    id: CHia7rdT
+    description: sample project to test repo branch switch
+    tags:
+      - rpeo
+      - vcs
+    lastUpdated: 1788522594291
