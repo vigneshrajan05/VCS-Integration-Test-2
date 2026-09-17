@@ -1,0 +1,19 @@
+kind: API
+apiVersion: api.ibm.com/v1
+metadata:
+  name: singapore-temperature-api
+  version: '1'
+  namespace: singapore-temperature-api
+  description: >-
+    Singapore Air Temperature API proxy using data from NEA via DataPower Nano
+    Gateway
+  tags:
+    - environment
+    - temperature
+spec:
+  api-spec:
+    $path: ../spec/TemperatureApi-spec.yml
+  uriSchemes:
+    $ref: singapore-temperature-api:singapore-temperature-uri-schemes:1.0
+  policy-sequence:
+    - $ref: singapore-temperature-api:singapore-temperature-sequence:1.0

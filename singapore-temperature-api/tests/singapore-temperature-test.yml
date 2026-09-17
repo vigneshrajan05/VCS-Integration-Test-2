@@ -1,0 +1,72 @@
+kind: test
+apiVersion: api.ibm.com/v1
+metadata:
+  name: singapore-temperature-test
+  namespace: singapore-temperature-api
+  version: '1.0'
+  tags:
+    - test
+spec:
+  api:
+    $endpoint: >-
+      https://singapore-temperature-api-product-sandbox-idig-agent-dev.api-n-kr20.d-v12e.apiconnect.dev.ibmappdomain.cloud/1/environment
+  environment:
+    $ref: singapore-temperature-api:singapore-temperature-environment:1.0
+  request:
+    - method: GET
+      resource: /air-temperature
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${client_id}
+        - key: X-IBM-Client-Secret
+          value: ${client_secret}
+      parameters: []
+      assertions:
+        - $ref: singapore-temperature-api:200-temperature-response:1.0
+    - method: GET
+      resource: /air-temperature
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${client_id}
+        - key: X-IBM-Client-Secret
+          value: ${client_secret}
+      parameters:
+        - key: station_id
+          value: S101
+          type: query
+      assertions:
+        - $ref: singapore-temperature-api:200-temperature-response:1.0
+    - method: GET
+      resource: /air-temperature
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: ${client_id}
+        - key: X-IBM-Client-Secret
+          value: ${client_secret}
+      parameters:
+        - key: start_time
+          value: '2025-11-11T00:00:00+08:00'
+          type: query
+        - key: end_time
+          value: '2025-11-11T12:00:00+08:00'
+          type: query
+      assertions:
+        - $ref: singapore-temperature-api:200-temperature-response:1.0
+    - method: GET
+      resource: /air-temperature
+      headers:
+        - key: accept
+          value: application/json
+        - key: X-IBM-Client-Id
+          value: invalid-client-id
+        - key: X-IBM-Client-Secret
+          value: invalid-client-secret
+      parameters: []
+      assertions:
+        - $ref: singapore-temperature-api:401-unauthorized:1.0

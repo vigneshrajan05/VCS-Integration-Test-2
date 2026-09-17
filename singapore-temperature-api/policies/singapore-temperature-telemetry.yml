@@ -1,0 +1,16 @@
+kind: Telemetry
+apiVersion: api.ibm.com/v1
+metadata:
+  name: singapore-temperature-telemetry
+  version: '1.0'
+  namespace: singapore-temperature-api
+  description: Telemetry policy for detailed monitoring of the Singapore Temperature API
+  tags:
+    - environment
+    - temperature
+spec:
+  verbosity:
+    - level: detailed
+      onSuccessTrimTo: detailed
+      inboundLevel: detailed
+      outboundLevel: detailed

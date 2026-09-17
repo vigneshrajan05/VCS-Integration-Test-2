@@ -1,0 +1,22 @@
+kind: Invoke
+apiVersion: api.ibm.com/v1
+metadata:
+  name: singapore-temperature-invoke
+  version: '1.0'
+  namespace: singapore-temperature-api
+  description: Invoke policy forwarding requests to the NEA temperature backend
+  tags:
+    - environment
+    - temperature
+spec:
+  endpoint:
+    http:
+      target:
+        url: >-
+          'https://sample-api.eu-west-a.apiconnect.automation.ibm.com/environment'
+          & $relativeUrl('request')
+        urlType: jsonata
+        timeout: 60
+        version: HTTP/1.1
+        tlsClientProfile: tls-client-profile-default:1.0.0
+        persistentConnections: true
