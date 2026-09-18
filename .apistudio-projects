@@ -50,12 +50,3 @@ projects:
     description: ''
     tags: []
     lastUpdated: 1789144530594
-  singapore-temperature-api:
-    id: VzAxkx1n
-    description: >-
-      Singapore Air Temperature API proxy using data from NEA via DataPower Nano
-      Gateway
-    tags:
-      - environment
-      - temperature
-    lastUpdated: 1789644382573
