@@ -1,0 +1,12 @@
+kind: API
+apiVersion: api.ibm.com/v1
+metadata:
+  name: petApi2
+  version: '1.0'
+  namespace: test-sourcecontrol
+  tags: []
+  type: REST
+spec:
+  api-spec:
+    $path: ./petapi2-spec.json
+  policy-sequence: []

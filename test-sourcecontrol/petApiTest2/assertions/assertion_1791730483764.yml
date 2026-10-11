@@ -1,0 +1,24 @@
+kind: assertion
+apiVersion: api.ibm.com/v1
+metadata:
+  name: assertion_1791730483764
+  namespace: default
+  version: '1.0'
+  tags: []
+  description: Default assertion added automatically from standalone tryout
+spec:
+  - name: status-ok
+    key: responseStatus
+    value: 200
+    action: equals
+    stopOnFail: false
+  - name: not-unauthorized
+    key: responseStatus
+    value: 401
+    action: notEquals
+    stopOnFail: false
+  - name: not-bad-gateway
+    key: responseStatus
+    value: 502
+    action: notEquals
+    stopOnFail: false

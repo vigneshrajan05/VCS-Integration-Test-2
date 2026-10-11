@@ -1,0 +1,87 @@
+kind: test
+apiVersion: api.ibm.com/v1
+metadata:
+  name: petApiTest2
+  namespace: test-sourcecontrol
+  version: '1.0'
+  tags: []
+spec:
+  api:
+    $ref: test-sourcecontrol:petApi2:1.0
+  request:
+    - resource: /pet
+      method: PUT
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /pet
+      method: POST
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /pet/findByStatus
+      method: GET
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /pet/findByTags
+      method: GET
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /pet/{petId}
+      method: GET
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /pet/{petId}
+      method: POST
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /pet/{petId}
+      method: DELETE
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /pet/{petId}/uploadImage
+      method: POST
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /store/inventory
+      method: GET
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /store/order
+      method: POST
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /store/order/{orderId}
+      method: GET
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /store/order/{orderId}
+      method: DELETE
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /user
+      method: POST
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /user/createWithList
+      method: POST
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /user/login
+      method: GET
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /user/logout
+      method: GET
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /user/{username}
+      method: GET
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /user/{username}
+      method: PUT
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
+    - resource: /user/{username}
+      method: DELETE
+      assertions:
+        $ref: default:assertion_1791730483764:1.0
